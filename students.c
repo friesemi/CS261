@@ -29,9 +29,9 @@
  */
 struct student* create_student(char* name, int id, float gpa) {
 	struct student *student = malloc(sizeof(student));
-	student->name = "null";
-	student->id = 11111111;
-	student->gpa = 0.0;
+	student->name = name;
+	student->id = id;
+	student->gpa = gpa;
 	return student;
 }
 
@@ -85,10 +85,7 @@ struct dynarray* create_student_array(int num_students, char** names, int* ids,
 	int i = 0;
 	struct dynarray **students = malloc(num_students * sizeof(struct student));
 	for (i; i < num_students; i++) {
-		students[i] = malloc(sizeof(struct student));
-		students[i]->student.name = names[i];
-		students[i]->student.id = ids[i];
-		students[i]->student.gpa = gpas[i];
+		students[i] = create_student(names[i], ids[i], gpas[i]);
 	}
   return *students;
 }
