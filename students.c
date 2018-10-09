@@ -83,7 +83,7 @@ void free_student(struct student* student) {
 struct dynarray* create_student_array(int num_students, char** names, int* ids,
     float* gpas) {
 	int i = 0;
-	struct dynarray **da = malloc(num_students * sizeof(*student));
+	struct dynarray **da = malloc(num_students * sizeof(student));
 	for (i; i < num_students; i++) {
 		da[i] = malloc(sizeof(student));
 		da[i].name = names[i];
