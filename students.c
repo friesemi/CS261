@@ -3,8 +3,8 @@
  * the assignment.  Make sure to add your name and @oregonstate.edu email
  * address below:
  *
- * Name:
- * Email:
+ * Name: Michael Friesen
+ * Email: friesemi@oregonstate.edu
  */
 
 #include <stdio.h>
@@ -28,7 +28,11 @@
  *   initialized with the values provided.
  */
 struct student* create_student(char* name, int id, float gpa) {
-  return NULL;
+	struct student = malloc(sizeof(student));
+	student->name = "null";
+	student.id = 11111111;
+	student.gpa = 0.0;
+	return student;
 }
 
 
@@ -43,7 +47,7 @@ struct student* create_student(char* name, int id, float gpa) {
  *     as well as memory allocated for the struct itself.
  */
 void free_student(struct student* student) {
-
+	free(student);
 }
 
 
@@ -78,7 +82,15 @@ void free_student(struct student* student) {
  */
 struct dynarray* create_student_array(int num_students, char** names, int* ids,
     float* gpas) {
-  return NULL;
+	int i = 0;
+	dynarray *da = malloc(num_students * sizeof(student));
+	for (i; i < num_students; i++) {
+		da[i] = malloc(sizeof(student));
+		da[i].name = names[i];
+		da[i].id = ids[i];
+		da[i].gpa = gpas[i];
+	}
+  return *da;
 }
 
 
@@ -97,7 +109,6 @@ struct dynarray* create_student_array(int num_students, char** names, int* ids,
  *     is to be freed
  */
 void free_student_array(struct dynarray* students) {
-
 }
 
 
