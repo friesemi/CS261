@@ -28,11 +28,11 @@
  *   initialized with the values provided.
  */
 struct student* create_student(char* name, int id, float gpa) {
-	student stud = malloc(sizeof(student));
-	stud->name = "null";
-	stud.id = 11111111;
-	stud.gpa = 0.0;
-	return stud;
+	struct student student = malloc(sizeof(student));
+	student->name = "null";
+	student.id = 11111111;
+	student.gpa = 0.0;
+	return student;
 }
 
 
@@ -83,7 +83,7 @@ void free_student(struct student* student) {
 struct dynarray* create_student_array(int num_students, char** names, int* ids,
     float* gpas) {
 	int i = 0;
-	dynarray *da = malloc(num_students * sizeof(student));
+	struct dynarray *da = malloc(num_students * sizeof(student));
 	for (i; i < num_students; i++) {
 		da[i] = malloc(sizeof(student));
 		da[i].name = names[i];
@@ -109,6 +109,7 @@ struct dynarray* create_student_array(int num_students, char** names, int* ids,
  *     is to be freed
  */
 void free_student_array(struct dynarray* students) {
+
 }
 
 
