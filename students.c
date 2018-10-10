@@ -31,7 +31,9 @@
  */
 struct student* create_student(char* name, int id, float gpa) {
 	struct student *student = malloc(sizeof(student));
-	student->name = name;
+	int n = strlen(name) + 1;
+	char *str = malloc(n * sizeof(char));
+	strncpy(str, student->name, n);
 	student->id = id;
 	student->gpa = gpa;
 
@@ -88,7 +90,7 @@ struct dynarray* create_student_array(int num_students, char** names, int* ids,
 	int i = 0;
 	struct dynarray *arr = dynarray_create();
 	for (i; i < num_students; i++){
-		struct student *stud = create_student(names[i], ids[i], gpas[i]);
+		struct student *stud = create_student(names[i], ids[i], gpas[i]);//the memory isn't allocated correctly
 		assert(stud);
 		dynarray_insert(arr, -1, stud);
 	}
