@@ -85,7 +85,7 @@ struct dynarray* create_student_array(int num_students, char** names, int* ids,
 	int i = 0;
 	struct dynarray *arr = dynarray_create();
 	for (i; i < num_students; i++) {
-		arr[i] = dynarray_insert(arr, i, create_student(names[i], ids[i], gpas[i]));
+		dynarray_insert(arr, -1, create_student(names[i], ids[i], gpas[i]));
 	}
 	return students;
 }
@@ -124,10 +124,10 @@ void free_student_array(struct dynarray* students) {
  *   students - the dynamic array of students to be printed
  */
 void print_students(struct dynarray* students) {
-	/*int size = dynarray_size(students), i = 0;
+	int size = dynarray_size(students), i = 0;
 	for (i; i < size; i++) {
-		printf("student: %s (%d): %f\n", students[i].name, students[i].id, students[i].gpa);
-	}*/
+		printf("student: %s (%d): %f\n", (char*)dynarray_get(students, i), (int*)dynarray_get(students, i), (float*)dynarray_get(students, i));
+	}
 }
 
 
