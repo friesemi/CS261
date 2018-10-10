@@ -86,9 +86,6 @@ struct dynarray* create_student_array(int num_students, char** names, int* ids,
 	int i = 0;
 	struct dynarray *arr = dynarray_create();
 	for (i; i < num_students; i++) {
-		struct student *stu = malloc(sizeof(struct student));
-		stu->name = names[i]; stu->id = ids[i]; stu->gpa = gpas[i];
-		printf("student: %s (%d): %f\n", (char*)dynarray_get(stu i), (int*)dynarray_get(stu, i), (float*)dynarray_get(stu, i));
 		dynarray_insert(arr, -1, create_student(names[i], ids[i], gpas[i]));
 	}
 	return arr;
