@@ -87,7 +87,7 @@ struct dynarray* create_student_array(int num_students, char** names, int* ids,
 	for (i; i < num_students; i++) {
 		dynarray_insert(arr, -1, create_student(names[i], ids[i], gpas[i]));
 	}
-	return students;
+	return arr;
 }
 
 
@@ -106,12 +106,12 @@ struct dynarray* create_student_array(int num_students, char** names, int* ids,
  *     is to be freed
  */
 void free_student_array(struct dynarray* students) {
-	/*int size = sizeof(students) / sizeof(struct student);
+	int size = sizeof(students) / sizeof(struct student);
 	int i = 0;
 	for (i; i < size; i++) {
 		free_student(students[i]);
 	}
-	free(students);*/
+	free(students);
 }
 
 
