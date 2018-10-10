@@ -32,8 +32,8 @@
  */
 struct student* create_student(char* name, int id, float gpa) {
 	struct student *student = malloc(sizeof(student));
-	int n = strlen(name);
-	char *str = malloc(n * sizeof(char));
+	int n = 64;
+	student->name = malloc(n * sizeof(char));
 	strncpy(student->name, str, n);
 	student->id = id;
 	student->gpa = gpa;
