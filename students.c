@@ -83,7 +83,7 @@ void free_student(struct student* student) {
 struct dynarray* create_student_array(int num_students, char** names, int* ids,
     float* gpas) {
 	int i = 0;
-	struct dynarray *arr = create_student_array();
+	struct dynarray *arr = dynarray_create();
 	for (i; i < num_students; i++) {
 		arr[i] = dynarray_insert(arr, i, create_student(names[i], ids[i], gpas[i]));
 	}
