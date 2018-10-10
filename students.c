@@ -8,6 +8,7 @@
  */
 
 #include <stdio.h>
+#include <stdlib.h>
 
 #include "students.h"
 #include "dynarray.h"
@@ -109,7 +110,7 @@ void free_student_array(struct dynarray* students) {
 	int size = dynarray_size(students);
 	int i = 0;
 	for (i; i < size; i++) {
-		free_student(students);
+		free_student(students[i]);
 	}
 	dynarray_free(students);
 }
