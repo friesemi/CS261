@@ -110,7 +110,7 @@ void free_student_array(struct dynarray* students) {
 	int size = dynarray_size(students);
 	int i = 0;
 	for (i; i < size; i++) {
-		free_student(students[i]);
+		free_student(dynarray_get(students, i);
 	}
 	dynarray_free(students);
 }
