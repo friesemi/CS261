@@ -33,6 +33,7 @@ struct student* create_student(char* name, int id, float gpa) {
 	student->name = name;
 	student->id = id;
 	student->gpa = gpa;
+
 	return student;
 }
 
@@ -85,7 +86,7 @@ struct dynarray* create_student_array(int num_students, char** names, int* ids,
     float* gpas) {
 	int i = 0;
 	struct dynarray *arr = dynarray_create();
-	for (i; i < num_students; i++)
+	for (i; i < num_students; i++){
 		struct student *stud = create_student(names[i], ids[i], gpas[i]);
 		dynarray_insert(arr, -1, stud);
 	}
