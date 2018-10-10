@@ -124,10 +124,10 @@ void free_student_array(struct dynarray* students) {
  *   students - the dynamic array of students to be printed
  */
 void print_students(struct dynarray* students) {
-	/*int size = dynarray_size(students), i = 0;
+	int size = dynarray_size(students), i = 0;
 	for (i; i < size; i++) {
-		printf("student: %s (%d): %f\n", students[i]->name, students[i]->id, students[i]->gpa);
-	}*/
+		printf("student: %s (%d): %f\n", students[i].name, students[i].id, students[i].gpa);
+	}
 }
 
 
