@@ -9,6 +9,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <assert.h>
 
 #include "students.h"
 #include "dynarray.h"
@@ -88,6 +89,7 @@ struct dynarray* create_student_array(int num_students, char** names, int* ids,
 	struct dynarray *arr = dynarray_create();
 	for (i; i < num_students; i++){
 		struct student *stud = create_student(names[i], ids[i], gpas[i]);
+		assert(stud);
 		dynarray_insert(arr, -1, stud);
 	}
 	return arr;
