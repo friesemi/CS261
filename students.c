@@ -10,6 +10,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
+#include <string.h>
 
 #include "students.h"
 #include "dynarray.h"
@@ -31,8 +32,8 @@
  */
 struct student* create_student(char* name, int id, float gpa) {
 	struct student *student = malloc(sizeof(student));
-	int n = strlen(name) + 1;
-	char *str = malloc(n * sizeof(char));
+	int n = strlen(name);
+	char *str = malloc(n * sizeof(char) + 1);
 	strncpy(str, student->name, n);
 	student->id = id;
 	student->gpa = gpa;
