@@ -91,7 +91,7 @@ struct dynarray* create_student_array(int num_students, char** names, int* ids,
 	int i = 0;
 	struct dynarray *arr = dynarray_create();
 	for (i; i < num_students; i++){
-		dynarray_insert(arr, -1, create_student(names, ids, gpas));
+		dynarray_insert(arr, -1, create_student(names[i], ids[i], gpas[i]));
 	}
 	return arr;
 }
