@@ -133,6 +133,7 @@ void free_student_array(struct dynarray* students) {
 void print_students(struct dynarray* students) {
 	int size = dynarray_size(students), i = 0;
 	for (i; i < size; i++) {
+		printf("test student: %s", (char*)dynarray_get(students, 0));
 		printf("student: %s (%d): %f\n", (char*)dynarray_get(students, i), (int*)dynarray_get(students, i), (float*)dynarray_get(students, i));
 	}
 }
