@@ -225,16 +225,15 @@ void sort_by_gpa(struct dynarray* students) {
 	int size = dynarray_size(students), i, j;
 	struct student *temp, *first, *second;
 
-	for (i = 0; i < size-1; i++) {
+	for (i = 0; i < size - 1; i++) {
 		first = dynarray_get(students, i);
 		second = dynarray_get(students, i + 1);
-		for (j = 0; j < size-i-1; j++) {
-			if(second->gpa > first->gpa){//if second val is greater than first val
+		for (j = 0; j < size - i - 1; j++) {
+			if (second->gpa > first->gpa) {//if second val is greater than first val
 				temp = first;
 				second = first;
 				temp = temp;
+			}
 		}
 	}
-
-	return students;
 }
