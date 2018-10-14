@@ -9,7 +9,6 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <assert.h>
 #include <string.h>
 
 #include "students.h"
@@ -230,6 +229,7 @@ void sort_by_gpa(struct dynarray* students) {
 		second = dynarray_get(students, i + 1);
 		for (j = 0; j < size - i - 1; j++) {
 			if (second->gpa > first->gpa) {//if second val is greater than first val
+				printf("is larger than\n");
 				temp = first;
 				second = first;
 				temp = temp;
