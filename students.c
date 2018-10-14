@@ -92,9 +92,9 @@ struct dynarray* create_student_array(int num_students, char** names, int* ids,
 	int i = 0;
 	struct dynarray *arr = dynarray_create();
 	for (i; i < num_students; i++){
-		struct student *stud = create_student(names[i], ids[i], gpas[i]);
-		dynarray_insert(arr, i, stud);
-		//dynarray_insert(arr, -1, create_student(names[i], ids[i], gpas[i]));
+		//struct student *stud = create_student(names[i], ids[i], gpas[i]);
+		//dynarray_insert(arr, i, stud);
+		dynarray_insert(arr, -1, create_student(names[i], ids[i], gpas[i]));
 	}
 	return arr;
 }
@@ -160,7 +160,14 @@ void print_students(struct dynarray* students) {
  *   the array.
  */
 struct student* find_max_gpa(struct dynarray* students) {
-  return NULL;
+	int size = dynarray_size(students), i = 0, high = 0;
+	struct student *highest = dynarray_get(students, high);
+	for (i; i < size; i++) {
+		if (students[i]->gpa > students[high]->gpa) {
+			highest = dynarray_get(students, i);
+		}
+	}
+	return highest;
 }
 
 
