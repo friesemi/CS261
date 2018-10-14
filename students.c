@@ -235,4 +235,6 @@ void sort_by_gpa(struct dynarray* students) {
 				temp = temp;
 		}
 	}
+
+	return students;
 }
