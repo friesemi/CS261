@@ -136,7 +136,7 @@ void print_students(struct dynarray* students) {
 	int size = dynarray_size(students), i = 0;
 	struct student *s;
 	for (i; i < size; i++) {
-		s = dynarray_get(students, i;
+		s = dynarray_get(students, i);
 		printf("student: %s (%d): %f\n", s->name, s->id, s->gpa);
 	}
 }
