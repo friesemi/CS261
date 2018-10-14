@@ -168,6 +168,7 @@ struct student* find_max_gpa(struct dynarray* students) {
 			highest = stud;
 		}
 	}
+
 	return highest;
 }
 
@@ -190,7 +191,16 @@ struct student* find_max_gpa(struct dynarray* students) {
  *   the array.
  */
 struct student* find_min_gpa(struct dynarray* students) {
-  return NULL;
+	int size = dynarray_size(students), i = 0, low = 0;
+	struct student *lowest = dynarray_get(students, low), *stud;
+	for (i; i < size; i++) {
+		stud = dynarray_get(students, i);
+		if (stud->gpa < lowest->gpa) {
+			lowest = stud;
+		}
+	}
+
+	return lowest;
 }
 
 
