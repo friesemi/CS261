@@ -225,9 +225,9 @@ void sort_by_gpa(struct dynarray* students) {
 	struct student *temp, *first, *second;
 
 	for (i = 0; i < size - 1; i++) {
-		first = dynarray_get(students, i);
-		second = dynarray_get(students, i + 1);
 		for (j = 0; j < size - i - 1; j++) {
+			first = dynarray_get(students, j);
+			second = dynarray_get(students, j + 1);
 			if (second->gpa > first->gpa) {//if second val is greater than first val
 				printf("is larger than\n");
 				temp = first;
