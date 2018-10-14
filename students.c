@@ -161,10 +161,11 @@ void print_students(struct dynarray* students) {
  */
 struct student* find_max_gpa(struct dynarray* students) {
 	int size = dynarray_size(students), i = 0, high = 0;
-	struct student *highest = dynarray_get(students, high);
+	struct student *highest = dynarray_get(students, high), *stud;
 	for (i; i < size; i++) {
-		if (students[i]->gpa > students[high]->gpa) {
-			highest = dynarray_get(students, i);
+		stud = dynarray_get(students, i);
+		if (stud->gpa > highest->gpa) {
+			highest = stud;
 		}
 	}
 	return highest;
