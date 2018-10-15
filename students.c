@@ -220,7 +220,7 @@ struct student* find_min_gpa(struct dynarray* students) {
  */
 void sort_by_gpa(struct dynarray* students) {
 	int size = dynarray_size(students), i, j;
-	struct student *temp, *first, *second;
+	struct student *first, *second;
 
 	for (i = 0; i < size - 1; i++) {
 		for (j = 0; j < size - i - 1; j++) {
